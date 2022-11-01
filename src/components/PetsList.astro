@@ -1,0 +1,17 @@
+---
+const res = await fetch("https://dog.ceo/api/breeds/image/random/6");
+const data = await res.json();
+console.log(data);
+---
+
+<section class="grid grid-cols-1 gap-4  ">
+  {
+    data.message.map((uri) => {
+      return (
+        <article  class="mx-auto  ">
+          <img class="max-h-23 rounded-xl" src={uri} />
+        </article>
+      );
+    })
+  }
+</section>
